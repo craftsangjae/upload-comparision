@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "upload-comparision"
+version = "0.1.0"
+description = ""
+authors = ["craftsangjae <craftsangjae@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "upload_comparision"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.2"
+django-storages = {extras = ["boto3"], version = "^1.14.2"}
+django-environ = "^0.11.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
