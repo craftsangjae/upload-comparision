@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-o@0d)z7mt-cuhz^*dk%y9s)^w4^q4h^+y%n82zsp9qjjas5z$8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -137,9 +137,11 @@ AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_ENDPOINT_URL = env('AWS_S3_ENDPOINT_URL')   # MinIO 서버의 URL
-AWS_S3_CUSTOM_DOMAIN = env('AWS_S3_ENDPOINT_URL')
+AWS_S3_CUSTOM_DOMAIN = env('AWS_S3_CUSTOM_DOMAIN')
 AWS_S3_REGION_NAME = 'us-east-1'  # MinIO는 리전 구분 없이 작동하지만, boto를 위해 기본값 설정
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
+
+APPEND_SLASH = False
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
