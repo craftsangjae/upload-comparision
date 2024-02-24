@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ftp-uploader"
+version = "0.1.0"
+description = ""
+authors = ["craftsangjae <craftsangjae@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ftp_uploader"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pyftpdlib = "^1.5.9"
+minio = "^7.2.4"
+python-dotenv = "^1.0.1"
+boto3 = "^1.34.49"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
