@@ -51,7 +51,7 @@ def main():
     authorizer.add_user("user", "password", "./", perm="elradfmw")
     handler = MyHandler
     handler.authorizer = authorizer
-    handler.passive_ports = [60000, 60001]
+    handler.passive_ports = range(60000, 65535)
 
     server = FTPServer(("0.0.0.0", 21), handler)
     server.serve_forever()

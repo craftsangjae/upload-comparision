@@ -33,8 +33,7 @@ services:
       AWS_S3_CUSTOM_DOMAIN: "${AWS_S3_CUSTOM_DOMAIN}"
     ports:
       - "21:21"
-      - "60000:60000"
-      - "60001:60001"
+      - "60000-65535:60000-65535"
     depends_on:
       - minio
 
