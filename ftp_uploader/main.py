@@ -36,7 +36,7 @@ class MyHandler(FTPHandler):
         end_time = time.time()
         elapsed_time = end_time - self.start_time
         print(f"File {file} upload completed. Time taken: {elapsed_time} seconds.")
-        bucket_name = os.getenv("FTP_BUCKET_NAME")
+        bucket_name = 'ftp-bucket'
         object_name = file.split('/')[-1]  # 파일 이름만 추출
         upload_file_to_minio(file, bucket_name, object_name)
 
