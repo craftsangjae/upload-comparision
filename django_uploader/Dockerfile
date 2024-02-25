@@ -17,4 +17,4 @@ RUN python manage.py migrate --noinput
 
 # gunicorn을 사용하여 Django 앱 실행
 ENTRYPOINT ["python", "-m", "gunicorn"]
-CMD ["--bind", "0.0.0.0:8000", "django_uploader.wsgi:application"]
+CMD ["--bind", "0.0.0.0:8000", "django_uploader.wsgi:application", "--timeout", "600"]
