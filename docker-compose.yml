@@ -16,7 +16,7 @@ services:
 
   nginx:
     build:
-      context: django_uploader/nginx
+      context: nginx_proxy
     ports:
       - "80:80"
     depends_on:
