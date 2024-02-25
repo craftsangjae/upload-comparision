@@ -13,9 +13,9 @@ load_dotenv()
 
 # boto3 클라이언트 설정
 s3_client = boto3.client('s3',
-                         endpoint_url=os.getenv("AWS_S3_ENDPOINT_URL"),
-                         aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
-                         aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
+                         endpoint_url='http://minio:9000',
+                         aws_access_key_id='minio-access-key',
+                         aws_secret_access_key='minio-secret-key',
                          region_name='us-east-1',
                          use_ssl=False)
 
@@ -51,7 +51,7 @@ def main():
     authorizer.add_user("user", "password", "./", perm="elradfmw")
     handler = MyHandler
     handler.authorizer = authorizer
-    handler.passive_ports = range(60000, 65535)
+    handler.passive_ports = range(60000, 60010)
 
     server = FTPServer(("0.0.0.0", 21), handler)
     server.serve_forever()
