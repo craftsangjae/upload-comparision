@@ -141,7 +141,7 @@ AWS_S3_CUSTOM_DOMAIN = 'django-bucket.minio:9000'
 AWS_S3_REGION_NAME = 'us-east-1'  # MinIO는 리전 구분 없이 작동하지만, boto를 위해 기본값 설정
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-
+AWS_S3_MAX_MEMORY_SIZE = 10485760
 APPEND_SLASH = False
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
